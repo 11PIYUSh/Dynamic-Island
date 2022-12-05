@@ -1,0 +1,174 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.display{
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: palegoldenrod;
+}
+
+.iPhone{
+  width: 250px;
+  height: 500px;
+  border: 5px solid black;
+  border-radius: 35px;
+  overflow: hidden;
+  position: relative;
+  -webkit-box-reflect: below 25px linear-gradient(transparent, Orgba(255, 0, 0, 0.527));
+}
+
+img{
+  width: 100%;
+  height: 100%;
+}
+
+.overlay{
+  width: 100%;
+  height: 100%;
+/*  background: red;*/
+  position: absolute;
+  transition: 0.5s;
+  top: 0;
+  left: 0;
+}
+
+.iPhone:hover .overlay{
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.dynamic{
+  width: 30%;
+  height: 18px;
+  background: #000;
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 25px;
+}
+
+.iPhone:hover .dynamic{
+  animation: big_bar 2s 1s ease-in-out ;
+}
+
+.profile{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 2px;
+  width: 40px;
+  height: 40px;
+  overflow: hidden;
+  border-radius: 50%;
+  background: #fff;
+  visibility: hidden;
+  opacity: 0;
+  }
+
+.iPhone:hover .dynamic  .profile{
+  animation: content 1.9s 1.1s ease-in-out;
+}
+
+.profile img{
+  object-fit: cover;
+}
+
+.profile_name{
+  position: absolute;
+  left: 47px;
+  font-size: 13px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #fff;
+  font-family: sans-serif;
+  visibility: hidden;
+  opacity: 0;
+  animation: content 1.9s 1.1s ease-in-out;
+}
+
+.call_attend{
+  position: absolute;
+  right: 3px;
+  width: 37px;
+  height: 37px;
+  border-radius: 50%;
+  background: green;
+  top: 50%;
+  transform: translateY(-50%);
+  display: grid;
+  place-content: center;
+  visibility: hidden;
+  opacity: 0;
+  animation: content 1.9s 1.1s ease-in-out;
+}
+
+.call_attend i{
+  align-items: center;
+  font-size: 18px;
+  color: white;
+}
+
+.call_hangup i{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 42px;
+  color: red;
+  font-size: 35px;
+  visibility: hidden;
+  opacity: 0;
+  animation: content 1.9s 1.1s ease-in-out;
+}
+
+.call_hangup::before{
+  content: '';
+  position: absolute;
+  right:4px;
+  right: 2px;
+  z-index: -888;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  background: #fff;
+  visibility: hidden;
+  opacity: 0;
+  animation: content 1.9s 1.1s ease-in-out;
+}
+
+@keyframes big_bar{
+  0% ,100%{
+    width: 30%;
+    height: 18px;
+  }
+  50%{
+    width: 90%;
+    height: 45px;
+  }
+  75% {
+    width: 90%;
+    height: 45px;
+  }
+  90% {
+    width: 90%;
+    height: 45px;
+  }
+}
+
+@keyframes content{
+  0%,100%{
+    visibility: hidden;
+    opacity: 0;
+  }
+  75%{
+    visibility: visible;
+    opacity: 1;
+  }
+  90%{
+    opacity: 0;
+  }
+}
